@@ -5,8 +5,10 @@
 
 return array(
 	'default' => array(
+		'type' => 'mysqli'
 		'connection'  => array(
-			'dsn'        => 'mysql:host=localhost;dbname=fuel_dev',
+			'hostname' => '',
+			'database' => '',
 			'username'   => 'root',
 			'password'   => 'root',
 		),
