@@ -13,7 +13,6 @@ class Tweet {
 			return \Cli::color("Invalid date.", 'red');
 		}
 
-		// Tweet::tweet("test");
 		$day_of_week = $date['wday'];
 		$month = $date['mon'];
 		$day = $date['mday'];
@@ -28,7 +27,7 @@ class Tweet {
 		$result = \DB::query($sql)->execute();
 
 		foreach ($result as $row) {
-			
+
 			if (isset($row['open_message'])) {
 				$default_open_message = $row['open_message'];
 			} else {
