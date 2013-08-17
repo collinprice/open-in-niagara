@@ -1,3 +1,4 @@
 fuel/app/logs/*/*/*
 fuel/app/cache/*/*
 #fuel/app/config/development/*
+.vagrant
