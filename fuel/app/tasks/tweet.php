@@ -29,24 +29,20 @@ class Tweet {
 
 		foreach ($result as $row) {
 			
-			if ($row['open_message']) {
+			if (isset($row['open_message'])) {
 				$default_open_message = $row['open_message'];
 			} else {
 				$default_open_message = $row['name'] . " is open for the day!";
 			}
 
-			if ($row['website']) {
+			if (isset($row['website'])) {
 				$default_open_message .= ' ' . $row['website'];
 			}
 
-			if ($row['close_message']) {
+			if (isset($row['close_message'])) {
 				$default_closed_message = $row['close_message'];
 			} else {
 				$default_closed_message = $row['name'] . " is now closed for the day :(";
-			}
-
-			if ($row['website']) {
-				$default_closed_message .= ' ' . $row['website'];
 			}
 
 			// Check if venue is open
@@ -54,7 +50,11 @@ class Tweet {
 
 				$opentime = strtotime($today . ' ' . $row['open_time']);
 				if ($time > $opentime && $time < strtotime('+10 minutes', $opentime)) {
-					Tweet::tweet($default_open_message);
+					if (isset($row['latitude']) && isset($row['longitude'])) {
+						Tweet::tweet($default_open_message, $row['latitude'], $row['longitude']);
+					} else {
+						Tweet::tweet($default_open_message);
+					}
 				}
 			}
 
@@ -63,7 +63,11 @@ class Tweet {
 
 				$opentime = strtotime($today . ' ' . $row['close_time']);
 				if ($time > $opentime && $time < strtotime('+10 minutes', $opentime)) {
-					Tweet::tweet($default_closed_message);
+					if (isset($row['latitude']) && isset($row['longitude'])) {
+						Tweet::tweet($default_closed_message, $row['latitude'], $row['longitude']);
+					} else {
+						Tweet::tweet($default_closed_message);
+					}
 				}
 			}
 		}
