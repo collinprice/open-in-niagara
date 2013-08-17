@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "1dff92190c002cd67aa196940a6a58c3",
+    "hash": "eec419b6be13899ec12308669bd7c88a",
     "packages": [
         {
             "name": "fuelphp/upload",
@@ -48,6 +48,45 @@
                 "upload"
             ],
             "time": "2013-08-15 21:55:11"
+        },
+        {
+            "name": "j7mbo/twitter-api-php",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/J7mbo/twitter-api-php.git",
+                "reference": "4dc589ebf9cbf35123f8777482a5a4627678dcda"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/J7mbo/twitter-api-php/zipball/4dc589ebf9cbf35123f8777482a5a4627678dcda",
+                "reference": "4dc589ebf9cbf35123f8777482a5a4627678dcda",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "TwitterAPIExchange.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GNU Public License"
+            ],
+            "authors": [
+                {
+                    "name": "James Mallison",
+                    "homepage": "https://github.com/j7mbo/twitter-api-php"
+                }
+            ],
+            "description": "Simple PHP Wrapper for Twitter API v1.1 calls",
+            "homepage": "https://github.com/j7mbo/twitter-api-php",
+            "keywords": [
+                "api",
+                "php",
+                "twitter"
+            ],
+            "time": "2013-07-28 09:39:09"
         },
         {
             "name": "monolog/monolog",
@@ -158,7 +197,8 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
-        "fuelphp/upload": 20
+        "fuelphp/upload": 20,
+        "j7mbo/twitter-api-php": 20
     },
     "platform": {
         "php": ">=5.3.3"
