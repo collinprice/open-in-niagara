@@ -71,7 +71,7 @@ class Tweet {
 
 	private static function tweet($message, $lat = null, $lon = null) {
 		// Debug
-		// echo $message . "\n"; return;
+		echo $message . "\n"; return;
 
 		$settings = array(
 			'consumer_key' => "sPGrK11aLEKXIFg6oaIIQ",
